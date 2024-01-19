@@ -1,5 +1,28 @@
 package com.example.ReceptLabb.controllers;
 
+import com.example.ReceptLabb.models.Recipe;
+import com.example.ReceptLabb.services.RecipeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping(value="/api")
 public class RecipeController {
-    // git äger
+    @Autowired
+    RecipeService recipeService;
+
+    // POST nytt recept
+    @PostMapping("/recipes")
+    public Recipe createRecipe(@RequestBody Recipe recipe) {
+        return recipeService.createRecipe(recipe);
+    }
+    // GET all recipes
+    @GetMapping("/recipes")
+    public List<Recipe> getAllRecipes() {
+        return recipeService.getAllRecipes();
+    }
+
+
 }
