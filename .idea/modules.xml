@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ReceptLabb.iml" filepath="$PROJECT_DIR$/.idea/ReceptLabb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ReceptLabb/ReceptLabb.iml" filepath="$PROJECT_DIR$/ReceptLabb/ReceptLabb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/receptlabb.iml" filepath="$PROJECT_DIR$/.idea/receptlabb.iml" />
     </modules>
   </component>
 </project>
