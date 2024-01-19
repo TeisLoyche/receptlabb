@@ -20,12 +20,10 @@ public class RecipeController {
         return recipeService.createRecipe(recipe);
     }
     // GET all recipes
-    /*
     @GetMapping("/recipes")
     public List<Recipe> getAllRecipes() {
         return recipeService.getAllRecipes();
-    }*/
-
+    }
 
 }
 // Oskar Testar
