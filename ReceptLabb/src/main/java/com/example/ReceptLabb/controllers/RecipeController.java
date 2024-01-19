@@ -5,8 +5,6 @@ import com.example.ReceptLabb.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(value="/api")
 public class RecipeController {
@@ -18,11 +16,16 @@ public class RecipeController {
     public Recipe createRecipe(@RequestBody Recipe recipe) {
         return recipeService.createRecipe(recipe);
     }
+    // DELETE a recipe based on ID
+    @RequestMapping(value = "/recipes/{id}", method = RequestMethod.DELETE)
+    public String deleteRecipe(@PathVariable String id) {
+        return recipeService.deleteRecipe(id);
+    }
     // GET all recipes
-    @GetMapping("/recipes")
+    /* @GetMapping("/recipes")
     public List<Recipe> getAllRecipes() {
         return recipeService.getAllRecipes();
-    }
+    } */
 
 
 }
