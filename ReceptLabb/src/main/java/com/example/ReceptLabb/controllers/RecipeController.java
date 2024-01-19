@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping(value="/api")
 public class RecipeController {
+
     @Autowired
     RecipeService recipeService;
 
@@ -26,6 +27,7 @@ public class RecipeController {
     public List<Recipe> getAllRecipes() {
         return recipeService.getAllRecipes();
     } */
+
 
 
 }
