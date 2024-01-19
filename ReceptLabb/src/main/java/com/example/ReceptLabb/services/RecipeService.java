@@ -14,4 +14,9 @@ public class RecipeService {
         return recipeRepository.save(recipe);
     }
 
+    public String deleteRecipe(String id) {
+        recipeRepository.deleteById(id);
+        return "Blog post deleted";
+    }
+
 }
