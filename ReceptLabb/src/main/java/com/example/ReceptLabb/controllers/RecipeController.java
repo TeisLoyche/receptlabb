@@ -3,13 +3,9 @@ package com.example.ReceptLabb.controllers;
 import com.example.ReceptLabb.models.Recipe;
 import com.example.ReceptLabb.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -29,12 +25,20 @@ public class RecipeController {
     public String deleteRecipe(@PathVariable String id) {
         return recipeService.deleteRecipe(id);
     }
-    // GET all recipes
+    // GET recipe by ID.
+    @RequestMapping(value = "/recipes/{id}", method = RequestMethod.GET)
+    public Recipe getRecipeById(@PathVariable String id) {
+        return recipeService.getRecipeById(id); }
+
+    // GET ALL recipes
     @GetMapping("/recipes")
-    public List<Recipe> getAllRecipes() {
+    public List<Recipe> getAllRecipes(){
         return recipeService.getAllRecipes();
     }
 
-
+    // UPDATE recipe.
+    @PutMapping("/recipes")
+    public Recipe updateRecipe(@RequestBody Recipe recipe) {
+        return recipeService.updateRecipe(recipe);
+    }
 }
-// Oskar Testar
